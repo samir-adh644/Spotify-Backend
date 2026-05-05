@@ -35,7 +35,11 @@ async function createMusic(req,res){
 }
 
 async function getAllMusics(req,res){
-    const musics = await musicModel.find().populate("artist","username email")
+    const musics = await musicModel
+    .find()
+    .skip(0)
+    .limit(20)
+    .populate("artist","username email")
 
     res.status(200).json({
         message:"Music fetched successfully",
