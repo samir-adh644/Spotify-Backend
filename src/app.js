@@ -12,7 +12,7 @@ app.use(cookieParser());
 
 app.use('/api/auth',authRoutes)
 app.use('/api/music',musicRoutes)
-app.use('/api/upload',albumRoutes)
+app.use('/api/create',albumRoutes)
 
 
 module.exports = app;

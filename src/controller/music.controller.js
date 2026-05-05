@@ -6,18 +6,8 @@ const jwt = require("jsonwebtoken")
 async function createMusic(req,res){
     const token = req.cookies.token;
 
-    if(!token){
-        return res.status(401).json({
-            message:"Unauthorized"
-        })
-    }
+ 
 
-    try {
-       const decoded = jwt.verify(token,process.env.JWT_SECRET)
-
-       if(decoded.role !== "artist"){
-        return res.status(403).json({message:"You dont have the access."})
-       }
 
    
     const {title}= req.body;
@@ -28,7 +18,7 @@ async function createMusic(req,res){
     const music = await musicModel.create({
         uri: result.url,
         title,
-        artist: decoded.id
+        artist: req.user.id,
     })
 
     res.status(201).json({
@@ -41,11 +31,7 @@ async function createMusic(req,res){
         }
     })
 
-    }  catch (error) {
-    console.log(error);
-    return res.status(500).json({ message: "Internal Server Error" });
 
-}
 }
 
 
