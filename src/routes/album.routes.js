@@ -5,6 +5,9 @@ const authMiddleware = require('../middlewares/auth.middleware')
 
 const router = express.Router();
 
-router.post("/album",authMiddleware.authArtist,albumController.createAlbum);
+router.post("/create",authMiddleware.authArtist,albumController.createAlbum);
+router.get("/albums",authMiddleware.authUser,albumController.getAllAlbums);
+router.get("/albums/:albumId",authMiddleware.authUser,albumController.getAlbumById)
+
 
 module.exports= router;
