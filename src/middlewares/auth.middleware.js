@@ -44,7 +44,7 @@ async function authUser(req,res,next){
             return res.status(403).json({message:"You don't have access"})
         }
 
-        req.use=decoded;
+        req.user=decoded;
 
         next();
 
