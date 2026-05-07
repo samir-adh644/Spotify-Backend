@@ -16,9 +16,7 @@ This project serves as the backbone for a digital music streaming platform. It h
 
 ### Installation
 1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/spotify-backend.git](https://github.com/your-username/spotify-backend.git)
-   cd spotify-backend
+
 
 2. npm install
  
@@ -34,7 +32,7 @@ This project serves as the backbone for a digital music streaming platform. It h
 ---
 
 ## 📡 API Documentation
-**Base URL:** `http://localhost:3000/`[cite: 1, 2]
+**Base URL:** `https://api-spotify-wln6.onrender.com`[cite: 1, 2]
 
 ### 1. Authentication
 | Method | Endpoint | Description |
